@@ -1,0 +1,62 @@
+<div class="main">
+  <div class="title-container">
+    <h1>Nuevo Usuario</h1>
+  </div>
+  <form [formGroup]="usuarioForm" (ngSubmit)="registrarUsuario()">
+    <mat-form-field>
+      <mat-label>Nombre de usuario</mat-label>
+      <input matInput placeholder="Nombre de usuario" formControlName="username" required />
+      <mat-error *ngIf="usuarioForm.get('username')?.hasError('required')">
+        El nombre de usuario es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput type="email" placeholder="Email" formControlName="email" required>
+      <mat-error *ngIf="usuarioForm.get('email')?.hasError('required')">
+        El correo electrónico es obligatorio.
+      </mat-error>
+      <mat-error *ngIf="usuarioForm.get('email')?.hasError('email')">
+        El correo debe ser válido.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" placeholder="Contraseña" formControlName="password" required>
+      <mat-error *ngIf="usuarioForm.get('password')?.hasError('required')">
+        La contraseña es obligatoria.
+      </mat-error>
+      <mat-error *ngIf="usuarioForm.get('password')?.hasError('minLength')">
+        La contraseña debe tener al menos 6 caracteres.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="enabled" required>
+        <mat-option [value]="true">Activo</mat-option>
+        <mat-option [value]="false">Inactivo</mat-option>
+      </mat-select>
+      <mat-error *ngIf="usuarioForm.get('enabled')?.hasError('required')">
+        El estado es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Rol</mat-label>
+      <mat-select formControlName="rol" required>
+        <mat-option value="Donante">Donante</mat-option>
+        <mat-option value="Organizacion">Organización</mat-option>
+      </mat-select>
+      <mat-error *ngIf="usuarioForm.get('rol')?.hasError('required')">
+        El rol es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <button [disabled]="usuarioForm.invalid" mat-raised-button color="primary" type="submit">
+      <mat-icon>add</mat-icon>Registrar
+    </button>
+  </form>
+</div>

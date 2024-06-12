@@ -1,0 +1,29 @@
+.main {
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    .title-container {
+      width: 100%;
+      text-align: center;
+    
+      h1 {
+        color: #2371b7;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+    }
+  
+    mat-form-field {
+      display: block;
+      margin-bottom: 20px;
+      max-width: 350px;
+      margin-left: 29rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      margin-left:36rem;
+    }
+  }

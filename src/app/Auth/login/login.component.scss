@@ -1,0 +1,41 @@
+.login-container {
+  display: flex;
+  margin-top: -5rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+
+  .login-form {
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+
+    mat-form-field {
+      width: 100%; // Hace que el campo de formulario ocupe todo el ancho del formulario
+
+      input.mat-input-element {
+        padding: 8px;
+      }
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+
+.error-message {
+  color: #d32f2f; // Color rojo para mensajes de error
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: #388e3c; // Color verde para mensajes de éxito
+  margin-top: 10px;
+  font-size: 0.9rem;
+}

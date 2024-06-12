@@ -1,0 +1,27 @@
+<nav class="navigation">
+  <ul>
+    <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    <li><a routerLink="/user" routerLinkActive="active">Perfil de Usuario</a></li>
+    <li><a routerLink="/listar" routerLinkActive="active">Listar Usuarios</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- Menu de navegacion 'Donante' -->
+<!--
+<app-menu (onToggleMenuNav)="onToggleMenuNav($event)"></app-menu>
+<app-body
+    [collapsed]="isMenuNavCollapsed"
+    [screenWidth]="screenWidth"
+></app-body>
+-->
+
+<!-- menu de navegacion 'Organización' -->
+<!--
+<app-sidenav (onToggleMenuNav)="onToggleMenuNav($event)"></app-sidenav>
+<app-structure
+    [collapsed]="isMenuNavCollapsed"
+    [screenWidth]="screenWidth"
+></app-structure>
+-->
